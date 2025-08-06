@@ -1,11 +1,29 @@
-/* Reset */
+/* =========== ANIMATED GRADIENT BACKGROUND =========== */
+.animated-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(270deg, #c3ec52, #0ba29d, #29ad95, #239889, #c3ec52);
+    background-size: 400% 400%;
+    animation: gradientMove 18s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* =========== PAGE BASE STYLES =========== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Gradient background */
 body {
     min-height: 100vh;
     font-family: 'Montserrat', Arial, sans-serif;
@@ -14,9 +32,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-/* Semi-transparent overlay */
 .overlay {
     min-height: 100vh;
     width: 100vw;
@@ -25,11 +43,10 @@ body {
     justify-content: center;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(3px);
-    position: relative;
     z-index: 2;
+    position: relative;
 }
 
-/* Central container */
 .container {
     background: rgba(255, 255, 255, 0.85);
     border-radius: 18px;
@@ -64,7 +81,7 @@ header h1 {
     letter-spacing: 2px;
 }
 
-/* Aesthetic loader animation */
+/* Loader animation */
 .loader {
     margin: 0 auto 1.2em auto;
     border: 5px solid #d3ede3;
@@ -94,109 +111,5 @@ footer {
 
     header h1 {
         font-size: 2em;
-    }
-}
-.background-bubbles {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    overflow: hidden;
-    list-style: none;
-    margin: 0; padding: 0;
-}
-.background-bubbles li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 38px;
-    height: 38px;
-    background: rgba(41, 173, 149, 0.25);
-    border-radius: 50%;
-    bottom: -60px;
-    animation: bubble-rise 16s linear infinite;
-    /* Vary each bubble's speed and position */
-}
-.background-bubbles li:nth-child(1) {
-    left: 12%;
-    width: 48px; height: 48px;
-    animation-duration: 14s;
-    animation-delay: 0s;
-}
-.background-bubbles li:nth-child(2) {
-    left: 22%;
-    width: 25px; height: 25px;
-    animation-duration: 11s;
-    animation-delay: 2s;
-    background: rgba(195, 236, 82, 0.18);
-}
-.background-bubbles li:nth-child(3) {
-    left: 38%;
-    width: 67px; height: 67px;
-    animation-duration: 17s;
-    animation-delay: 4s;
-    background: rgba(35, 152, 137, 0.22);
-}
-.background-bubbles li:nth-child(4) {
-    left: 55%;
-    width: 38px; height: 38px;
-    animation-duration: 13s;
-    animation-delay: 0s;
-    background: rgba(41, 173, 149, 0.14);
-}
-.background-bubbles li:nth-child(5) {
-    left: 70%;
-    width: 22px; height: 22px;
-    animation-duration: 16s;
-    animation-delay: 3s;
-}
-.background-bubbles li:nth-child(6) {
-    left: 82%;
-    width: 52px; height: 52px;
-    animation-duration: 18s;
-    animation-delay: 2s;
-    background: rgba(195, 236, 82, 0.19);
-}
-.background-bubbles li:nth-child(7) {
-    left: 8%;
-    width: 44px; height: 44px;
-    animation-duration: 17s;
-    animation-delay: 5s;
-    background: rgba(35, 152, 137, 0.17);
-}
-.background-bubbles li:nth-child(8) {
-    left: 58%;
-    width: 27px; height: 27px;
-    animation-duration: 14s;
-    animation-delay: 7s;
-    background: rgba(195, 236, 82, 0.16);
-}
-.background-bubbles li:nth-child(9) {
-    left: 28%;
-    width: 39px; height: 39px;
-    animation-duration: 12s;
-    animation-delay: 6s;
-}
-.background-bubbles li:nth-child(10) {
-    left: 90%;
-    width: 30px; height: 30px;
-    animation-duration: 10s;
-    animation-delay: 8s;
-    background: rgba(35, 152, 137, 0.20);
-}
-
-@keyframes bubble-rise {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 0.75;
-    }
-    50% {
-        opacity: 0.9;
-        filter: blur(1px);
-    }
-    100% {
-        transform: translateY(-110vh) scale(1.2);
-        opacity: 0.08;
     }
 }
